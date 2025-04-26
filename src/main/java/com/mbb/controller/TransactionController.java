@@ -2,11 +2,11 @@ package com.mbb.controller;
 
 import com.mbb.model.TransactionDto;
 import com.mbb.service.TransactionService;
-import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +26,7 @@ public class TransactionController {
   }
 
   @GetMapping("/{id}")
-  public TransactionDto getById(@PathParam("id") Long id) {
+  public TransactionDto getById(@PathVariable("id") Long id) {
     return service.getById(id);
   }
 
